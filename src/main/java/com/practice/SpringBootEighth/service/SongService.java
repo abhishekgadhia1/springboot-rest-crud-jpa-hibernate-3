@@ -26,4 +26,15 @@ public class SongService {
 		songRepository.save(song);
 		
 	}
+
+	public void updateSong(String id, Song song) {
+		songRepository.save(song);
+		
+	}
+
+	public void deleteSong(String id) {
+		// TODO Auto-generated method stub
+		songRepository.deleteById(id);
+		
+	}
 }

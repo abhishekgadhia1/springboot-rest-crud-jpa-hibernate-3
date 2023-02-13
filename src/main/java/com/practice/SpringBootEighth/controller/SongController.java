@@ -3,6 +3,7 @@ package com.practice.SpringBootEighth.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,5 +28,17 @@ public class SongController {
 	public void addSong(@RequestBody Song song)
 	{
 		songService.addSong(song);
+	}
+	
+	@RequestMapping(method=RequestMethod.PUT, value="/songs/{id}")
+	public void updateSong(@PathVariable String id, @RequestBody Song song)
+	{
+		songService.updateSong(id, song);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE, value="/songs/{id}")
+	public void deleteMovie(@PathVariable String id)
+	{
+		songService.deleteSong(id);
 	}
 }
